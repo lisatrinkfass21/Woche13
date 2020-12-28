@@ -1,0 +1,170 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    tools:context=".MainActivity" >
+
+    <TableLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:gravity="center_vertical">
+
+        <TableRow
+            android:layout_width="match_parent"
+            android:layout_height="match_parent" >
+
+            <TextView
+                android:id="@+id/freieFields"
+                android:layout_height="match_parent"
+                android:text="9"
+                android:textSize="20sp"
+                android:layout_weight="1"/>
+
+
+            <TextView
+                android:id="@+id/SpielerAnzeige"
+                android:layout_width="61dp"
+                android:layout_height="match_parent"
+                android:layout_weight="1"
+                android:gravity="center"
+                android:text="Spieler 1"
+                android:textSize="36sp" />
+
+
+        </TableRow>
+
+        <TableRow
+            android:id="@+id/row1"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_weight="1">
+
+            <Button
+                android:id="@+id/btn1"
+                style="@style/Theme.AppCompat.Light.DarkActionBar"
+                android:layout_width="wrap_content"
+                android:layout_height="match_parent"
+                android:layout_weight="1"
+                android:background="@drawable/gradient_background"
+                android:onClick="enterTab"
+                android:text=""
+                android:textColor="@color/black"
+                android:textSize="48dp" />
+
+            <Button
+                android:id="@+id/btn2"
+                android:layout_width="wrap_content"
+                android:layout_height="match_parent"
+                android:layout_weight="1"
+                android:background="@drawable/gradient_background"
+                android:onClick="enterTab"
+                android:text=""
+                android:textColor="@color/black"
+                android:textSize="48dp" />
+
+
+            <Button
+                android:id="@+id/btn3"
+                android:layout_width="wrap_content"
+                android:layout_height="match_parent"
+                android:layout_weight="1"
+                android:background="@drawable/gradient_background"
+                android:onClick="enterTab"
+                android:text=""
+                android:textColor="@color/black"
+                android:textSize="48dp" />
+        </TableRow>
+
+
+        <TableRow
+            android:id="@+id/row2"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_weight="1">
+
+            <Button
+                android:id="@+id/btn4"
+                android:layout_width="wrap_content"
+                android:layout_height="match_parent"
+                android:layout_weight="1"
+                android:background="@drawable/gradient_background"
+                android:onClick="enterTab"
+                android:text=""
+                android:textColor="@color/black"
+                android:textSize="48dp"  />
+
+
+            <Button
+                android:id="@+id/btn5"
+                android:layout_width="wrap_content"
+                android:layout_height="match_parent"
+                android:layout_weight="1"
+                android:background="@drawable/gradient_background"
+                android:onClick="enterTab"
+                android:text=""
+                android:textColor="@color/black"
+                android:textSize="48dp" />
+
+            <Button
+                android:id="@+id/btn6"
+                android:layout_width="wrap_content"
+                android:layout_height="match_parent"
+                android:layout_weight="1"
+                android:background="@drawable/gradient_background"
+                android:onClick="enterTab"
+                android:text=""
+                android:textColor="@color/black"
+                android:textSize="48dp"  />
+
+
+        </TableRow>
+
+
+
+        <TableRow
+            android:id="@+id/row3"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_weight="1">
+
+            <Button
+                android:id="@+id/btn7"
+                android:layout_width="wrap_content"
+                android:layout_height="match_parent"
+                android:layout_weight="1"
+                android:background="@drawable/gradient_background"
+                android:onClick="enterTab"
+                android:text=""
+                android:textColor="@color/black"
+                android:textSize="48dp"  />
+
+
+            <Button
+                android:id="@+id/btn8"
+                android:layout_width="wrap_content"
+                android:layout_height="match_parent"
+                android:layout_weight="1"
+                android:background="@drawable/gradient_background"
+                android:onClick="enterTab"
+                android:text=""
+                android:textColor="@color/black"
+                android:textSize="48dp"  />
+
+            <Button
+                android:id="@+id/btn9"
+                android:layout_width="wrap_content"
+                android:layout_height="match_parent"
+                android:layout_weight="1"
+                android:background="@drawable/gradient_background"
+                android:onClick="enterTab"
+                android:text=""
+                android:textColor="@color/black"
+                android:textSize="48dp" />
+        </TableRow>
+    </TableLayout>
+
+
+</LinearLayout>
