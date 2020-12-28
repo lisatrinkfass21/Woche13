@@ -22,16 +22,24 @@ public class Main_logic {
                 field[i][j]= "";
             }
         }
-        currentSpieler  = s1;
+        currentSpieler  = s2;
         freieFelder = 9;
     }
 
     public boolean setPlaymove(int x, int y){
+
         if(checkKoordinaten(x,y)) {
             field[x][y] = currentSpieler.getPref();
             --freieFelder;
+            if (currentSpieler.equals(s1)) {
+                currentSpieler = s2;
+            } else {
+                currentSpieler = s1;
+            }
             return true;
         }
+
+
     return false;
     }
 
@@ -52,37 +60,34 @@ public class Main_logic {
 
         //checkrow
         for (int i = 0; i< field.length; i++){
-            if(field[i][0].equals(field[i][1]) && field[i][1].equals(field[i][2])){
+            if(!field[i][0].equals("")&&field[i][0].equals(field[i][1]) && field[i][1].equals(field[i][2])){
                 return currentSpieler.getSpielerId();
             }
         }
 
         //checkColumn
         for (int i = 0; i<field.length; i++){
-            if(field[0][i].equals(field[1][i]) && field[1][i].equals(field[2][i])){
+            if(!field[0][i].equals("")&&field[0][i].equals(field[1][i]) && field[1][i].equals(field[2][i])){
                 return currentSpieler.getSpielerId();
             }
         }
 
         //check diogonale
-        if(field[0][0].equals(field[1][1]) && field[1][1].equals(field[2][2])) {
-            return 1;
+        if(!field[0][0].equals("")&&field[0][0].equals(field[1][1]) && field[1][1].equals(field[2][2])) {
+            return currentSpieler.getSpielerId();
         }
-        if(field[0][3].equals(field[1][1]) && field[1][1].equals(field[2][0])) {
-            return 1;
+        if(!field[0][2].equals("")&&field[0][2].equals(field[1][1]) && field[1][1].equals(field[2][0])) {
+            return currentSpieler.getSpielerId();
         }
+
 
         //check unentschieden
         if(freieFelder==0){
             return 0;
         }
 
-        if (currentSpieler.equals(s1)) {
-            currentSpieler = s2;
-        } else {
-            currentSpieler = s1;
-        }
-        return -1;
+
+        return -5;
     }
     }
 

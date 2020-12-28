@@ -5,7 +5,7 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:orientation="vertical"
-    tools:context=".MainActivity" >
+    tools:context=".MainActivity">
 
     <TableLayout
         android:layout_width="match_parent"
@@ -14,14 +14,15 @@
 
         <TableRow
             android:layout_width="match_parent"
-            android:layout_height="match_parent" >
+            android:layout_height="match_parent">
 
             <TextView
                 android:id="@+id/freieFields"
                 android:layout_height="match_parent"
+                android:layout_weight="1"
+                android:gravity="center_vertical"
                 android:text="9"
-                android:textSize="20sp"
-                android:layout_weight="1"/>
+                android:textSize="20sp" />
 
 
             <TextView
@@ -44,15 +45,16 @@
 
             <Button
                 android:id="@+id/btn1"
-                style="@style/Theme.AppCompat.Light.DarkActionBar"
                 android:layout_width="wrap_content"
                 android:layout_height="match_parent"
                 android:layout_weight="1"
                 android:background="@drawable/gradient_background"
+                app:backgroundTint="@null"
                 android:onClick="enterTab"
                 android:text=""
                 android:textColor="@color/black"
-                android:textSize="48dp" />
+                android:textSize="48dp"
+               />
 
             <Button
                 android:id="@+id/btn2"
@@ -60,6 +62,7 @@
                 android:layout_height="match_parent"
                 android:layout_weight="1"
                 android:background="@drawable/gradient_background"
+                app:backgroundTint="@null"
                 android:onClick="enterTab"
                 android:text=""
                 android:textColor="@color/black"
@@ -72,6 +75,7 @@
                 android:layout_height="match_parent"
                 android:layout_weight="1"
                 android:background="@drawable/gradient_background"
+                app:backgroundTint="@null"
                 android:onClick="enterTab"
                 android:text=""
                 android:textColor="@color/black"
@@ -91,10 +95,11 @@
                 android:layout_height="match_parent"
                 android:layout_weight="1"
                 android:background="@drawable/gradient_background"
+                app:backgroundTint="@null"
                 android:onClick="enterTab"
                 android:text=""
                 android:textColor="@color/black"
-                android:textSize="48dp"  />
+                android:textSize="48dp" />
 
 
             <Button
@@ -103,6 +108,7 @@
                 android:layout_height="match_parent"
                 android:layout_weight="1"
                 android:background="@drawable/gradient_background"
+                app:backgroundTint="@null"
                 android:onClick="enterTab"
                 android:text=""
                 android:textColor="@color/black"
@@ -114,14 +120,14 @@
                 android:layout_height="match_parent"
                 android:layout_weight="1"
                 android:background="@drawable/gradient_background"
+                app:backgroundTint="@null"
                 android:onClick="enterTab"
                 android:text=""
                 android:textColor="@color/black"
-                android:textSize="48dp"  />
+                android:textSize="48dp" />
 
 
         </TableRow>
-
 
 
         <TableRow
@@ -136,10 +142,11 @@
                 android:layout_height="match_parent"
                 android:layout_weight="1"
                 android:background="@drawable/gradient_background"
+                app:backgroundTint="@null"
                 android:onClick="enterTab"
                 android:text=""
                 android:textColor="@color/black"
-                android:textSize="48dp"  />
+                android:textSize="48dp" />
 
 
             <Button
@@ -148,10 +155,11 @@
                 android:layout_height="match_parent"
                 android:layout_weight="1"
                 android:background="@drawable/gradient_background"
+                app:backgroundTint="@null"
                 android:onClick="enterTab"
                 android:text=""
                 android:textColor="@color/black"
-                android:textSize="48dp"  />
+                android:textSize="48dp" />
 
             <Button
                 android:id="@+id/btn9"
@@ -159,6 +167,7 @@
                 android:layout_height="match_parent"
                 android:layout_weight="1"
                 android:background="@drawable/gradient_background"
+                app:backgroundTint="@null"
                 android:onClick="enterTab"
                 android:text=""
                 android:textColor="@color/black"

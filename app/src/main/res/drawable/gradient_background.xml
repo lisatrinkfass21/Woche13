@@ -8,6 +8,9 @@
         android:startColor="#12590A"
         android:type="linear"
         />
+    <stroke
+        android:width="3dp"
+        android:color="#FFFFFF" />
 
     <corners
         android:radius="0dp"/>

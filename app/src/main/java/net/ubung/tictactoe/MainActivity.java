@@ -12,6 +12,16 @@ import org.w3c.dom.Text;
 
 public class MainActivity extends AppCompatActivity {
 
+    private final int id1 = R.id.btn1;
+    private final int id2 = R.id.btn2;
+    private final int id3 = R.id.btn3;
+    private final int id4 = R.id.btn4;
+    private final int id5 = R.id.btn5;
+    private final int id6 = R.id.btn6;
+    private final int id7 = R.id.btn7;
+    private final int id8 = R.id.btn8;
+    private final int id9 = R.id.btn9;
+
 
      private Spieler player1 = new Spieler(1, "X");
      private Spieler player2 = new Spieler(2, "O");
@@ -24,7 +34,8 @@ public class MainActivity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
-
+        resetTable();
+        ml.start();
     }
 
     public void enterTab(View view) {
@@ -33,51 +44,54 @@ public class MainActivity extends AppCompatActivity {
         Button button = (Button)view;
         int id  = 0;
         switch (button.getId()){
-            case R.id.btn1: id = 1; break;
-            case R.id.btn2: id = 2; break;
-            case R.id.btn3: id = 3; break;
-            case R.id.btn4: id = 4; break;
-            case R.id.btn5: id = 5; break;
-            case R.id.btn6: id = 6; break;
-            case R.id.btn7: id = 7; break;
-            case R.id.btn8: id = 8; break;
-            case R.id.btn9: id = 9; break;
+            case id1: id = 1; break;
+            case id2: id = 2; break;
+            case id3: id = 3; break;
+            case id4: id = 4; break;
+            case id5: id = 5; break;
+            case id6: id = 6; break;
+            case id7: id = 7; break;
+            case id8: id = 8; break;
+            case id9: id = 9; break;
             default: break;
 
         }
-        int abb = -1;
+        int abb = -5;
        if(convertCheckKoordinaten(id)){
            button.setText(currentPlayer.getPref());
            --freieFelder;
-           free.setText(freieFelder);
+           free.setText(String.valueOf(freieFelder));
            if(freieFelder<5) {
                abb = ml.checkAbbruch();
-               switch (abb) {
-                   case 1:
-                       Toast.makeText(getApplicationContext(), "Spieler 1 ist der Gewinner", Toast.LENGTH_LONG).show();
-                       ml.resetfield();
-                       resetTable();
-                       break;
-                   case 2:
-                       Toast.makeText(getApplicationContext(), "Spieler 2 ist der Gewinner", Toast.LENGTH_LONG).show();
-                       ml.resetfield();
-                       resetTable();
-                       break;
-                   case 0:
-                       Toast.makeText(getApplicationContext(), "Das Spiel ist aus - kein Sieger", Toast.LENGTH_LONG).show();
-                       ml.resetfield();
-                       resetTable();
-                       break;
+                   switch (abb) {
+                       case 1:
+                           ml.resetfield();
+                           resetTable();
+                           Toast.makeText(getApplicationContext(), "Spieler 1 ist der Gewinner", Toast.LENGTH_LONG).show();
+                           break;
+                       case 2:
+                           ml.resetfield();
+                           resetTable();
+                           Toast.makeText(getApplicationContext(), "Spieler 2 ist der Gewinner", Toast.LENGTH_LONG).show();
 
+                           break;
+                       case 0:
+                           ml.resetfield();
+                           resetTable();
+                           Toast.makeText(getApplicationContext(), "Das Spiel ist aus - kein Sieger", Toast.LENGTH_LONG).show();
+                           break;
+                   }
+               }
+           if (abb == -5) {
+               if (currentPlayer.equals(player1)) {
+                   currentPlayer = player2;
+                   text.setText("Spieler 2");
+               } else {
+                   currentPlayer = player1;
+                   text.setText("Spieler 1");
                }
            }
-           if (currentPlayer.equals(player1)) {
-               currentPlayer = player2;
-               text.setText("Spieler 2");
-           } else {
-               currentPlayer = player1;
-               text.setText("Spieler 1");
-           }
+
        }else{
            Toast.makeText(getApplicationContext(),"Dieses Feld ist schon besetzt", Toast.LENGTH_LONG).show();
        }
@@ -85,8 +99,12 @@ public class MainActivity extends AppCompatActivity {
     }
 
     private void resetTable(){
+        TextView free = (TextView)findViewById(R.id.freieFields);
+        TextView text = (TextView)findViewById(R.id.SpielerAnzeige);
         currentPlayer = player1;
+        text.setText("Spieler 1");
         freieFelder = 9;
+        free.setText("9");
         Button b1 = (Button)findViewById(R.id.btn1);
         Button b2 = (Button)findViewById(R.id.btn2);
         Button b3 = (Button)findViewById(R.id.btn3);
